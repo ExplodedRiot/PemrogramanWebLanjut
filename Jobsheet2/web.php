@@ -1,19 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-class web extends Controller
-{
-    Route::get('/', [PageController::class. 'index']);
-
-Route::get('/', [PageController::class, 'about']);
-
-Route::get('articles/{id}', [PageController::class, 'articles']);
-}
-
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleControllers
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::get('/', function () {
+    echo "Welcome!";
+});
+
+Route::get('/about', function(){
+    echo "My Name is Muhammad Alif Ananda, and My NIM is 1941720078";
+});
+
+Route::get('articles/{id}', function ($id) {
+    echo "Article Pages with ID ${id}";
+});
+
+
+
